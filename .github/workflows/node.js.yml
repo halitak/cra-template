@@ -24,3 +24,7 @@ jobs:
       run: yarn
     - name: test
       run: yarn coverage
+    - name: codecov
+      run: bash <(curl -s https://codecov.io/bash)
+      env:
+        CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
