@@ -1,9 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      upload-tests:
-        steps:
-          - run: bash <(curl -s https://codecov.io/bash)
+jobs:
+  upload-tests:
+    steps:
+      - run: bash <(curl -s https://codecov.io/bash)
