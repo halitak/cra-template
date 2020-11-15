@@ -4,5 +4,4 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - node/test
       - bash <(curl -s https://codecov.io/bash)
