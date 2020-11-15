@@ -4,4 +4,6 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - curl -s https://codecov.io/bash
+      upload-tests:
+        steps:
+          - run: bash <(curl -s https://codecov.io/bash)
