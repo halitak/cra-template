@@ -43,7 +43,7 @@ jobs:
           command: yarn coverage
       - run:
           name: Codecov
-          command: codecov
+          command: bash <(curl -s https://codecov.io/bash)
 workflows:
   build_app:
     jobs:
