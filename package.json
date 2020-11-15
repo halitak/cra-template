@@ -1,5 +1,5 @@
 {
-  "name": "cra-starter",
+  "name": "react-02",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,10 +8,14 @@
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
     "eslint": "^7.13.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
@@ -27,6 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "yarn run test --coverage",
     "eject": "react-scripts eject",
     "format": "yarn run format:eslint && yarn run format:stylelint",
     "format:eslint": "prettier --write src/**/*.js && yarn lint:eslint --fix",
@@ -60,7 +65,28 @@
     }
   },
   "lint-staged": {
-    "*.js": "yarn run format:eslint",
+    "*.js": "yarn run format:eslint && yarn run coverage",
     "*.css": "yarn run format:stylelint"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/setupTests.js",
+      "!src/components/**/index.js",
+      "!src/components/**/*.stories.js",
+      "!src/routes/**/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
   }
 }

@@ -1,10 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Routes from './routes/Routes';
 
 const App = () => {
-  const message = 'Hello World';
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <header>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </nav>
+      </header>
+      <Routes />
+      <header>Footer</header>
     </div>
   );
 };

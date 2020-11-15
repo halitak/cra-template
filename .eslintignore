@@ -1,3 +1,4 @@
-public
-build
+/public
+/build
 react-app-env.d.ts
+/coverage
