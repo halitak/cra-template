@@ -65,7 +65,7 @@
     }
   },
   "lint-staged": {
-    "*.js": "yarn run format:eslint && yarn run coverage",
+    "*.js": "yarn run format:eslint",
     "*.css": "yarn run format:stylelint"
   },
   "jest": {
