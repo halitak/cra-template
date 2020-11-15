@@ -41,6 +41,9 @@ jobs:
       - run:
           name: Coverage
           command: yarn coverage
+      - run:
+          name: Codecov
+          command: codecov
 workflows:
   build_app:
     jobs:
